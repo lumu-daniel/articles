@@ -15,7 +15,11 @@ class MainViewModel : ViewModel() {
     val data: LiveData<List<Article>>
         get() = _data
 
-    fun fetchData() = viewModelScope.launch(Dispatchers.IO) {
+    init {
+        fetchData()
+    }
+
+    private fun fetchData() = viewModelScope.launch(Dispatchers.IO) {
         val lstRes = mutableListOf(
             Article(
                 title = "Name 1",
@@ -41,7 +45,32 @@ class MainViewModel : ViewModel() {
                 title = "Name 5",
                 content = "The PNG format is widely supported and works best with presentations and web design. ",
                 imageURL = "https://cdn4.iconfinder.com/data/icons/bettericons/354/github-512.png"
-            )
+            ),
+            Article(
+                title = "Name 6",
+                content = "The PNG format is widely supported and works best with presentations and web design. ",
+                imageURL = "https://cdn4.iconfinder.com/data/icons/bettericons/354/github-512.png"
+            ),
+            Article(
+                title = "Name 7",
+                content = "The PNG format is widely supported and works best with presentations and web design. ",
+                imageURL = "https://cdn4.iconfinder.com/data/icons/bettericons/354/github-512.png"
+            ),
+            Article(
+                title = "Name 8",
+                content = "The PNG format is widely supported and works best with presentations and web design. ",
+                imageURL = "https://cdn4.iconfinder.com/data/icons/bettericons/354/github-512.png"
+            ),
+            Article(
+                title = "Name 9",
+                content = "The PNG format is widely supported and works best with presentations and web design. ",
+                imageURL = "https://cdn4.iconfinder.com/data/icons/bettericons/354/github-512.png"
+            ),
+            Article(
+                title = "Name 10",
+                content = "The PNG format is widely supported and works best with presentations and web design. ",
+                imageURL = "https://cdn4.iconfinder.com/data/icons/bettericons/354/github-512.png"
+            ),
         )
         _data.postValue(lstRes)
     }
