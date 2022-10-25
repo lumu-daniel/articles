@@ -19,6 +19,9 @@ class MainViewModel : ViewModel() {
         fetchData()
     }
 
+    /**
+     * TODO: Please do reverse the list when presented in UI
+     * */
     private fun fetchData() = viewModelScope.launch(Dispatchers.IO) {
         val lstRes = mutableListOf(
             Article(
