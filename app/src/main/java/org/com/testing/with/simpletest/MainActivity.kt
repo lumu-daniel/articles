@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity() {
                     val rvAdapter = RVCustomAdapter()
                     rvAdapter.articleList = list
                     adapter = rvAdapter
+                    layoutManager = LinearLayoutManager(this@MainActivity)
                 }
             }
 
